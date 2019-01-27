@@ -5,6 +5,7 @@
  */
 package Collections;
 import java.util.*;
+
 /**
  *
  * @author rledesma
@@ -12,26 +13,29 @@ import java.util.*;
 public class SetExample {
     
     public static void main(String args[]) { 
-     int count[] = {24,20,5,54,45,20};
-     Set<Integer> set = new HashSet<>();
-     try{
-        for(int i = 0; i<5; i++){
-           set.add(count[i]);
-        }
-        System.out.println(set);
-  
-        TreeSet<Integer> sortedSet = new TreeSet<>(set);
-        System.out.println("Sorted list is:"+" "+ sortedSet);
-      
+    
+        Set<String> nbaStars = new HashSet<>();
 
-        System.out.println("The First number is : "+
-                sortedSet.first());
-        
-        
-        System.out.println("The last last number is: "+
-                sortedSet.last());
-     }
-     catch(Exception e){}
+        // Check if a HashSet is empty
+        System.out.println("Is nbaStars set empty? : " + nbaStars.isEmpty());
+
+        nbaStars.add("Lebron James");
+        nbaStars.add("Kevin Durant");
+        nbaStars.add("Anthony Davis");
+        nbaStars.add("James Harden");
+
+        // Find the size of a HashSet
+        System.out.println("Number of NBA Stars in the HashSet " + nbaStars.size());
+        // Displeying the HashSet elements
+        System.out.println("NBA Stars in the HashSet are: " + nbaStars);
+
+        // Check if the HashSet contains an element
+        String cityName = "James Harden";
+        if(nbaStars.contains(cityName)) {
+            System.out.println(cityName + " is in the NBA Stars set.");
+        } else {
+            System.out.println(cityName + " is not in the NBA Stars set.");
+        }
   }
 } 
     
