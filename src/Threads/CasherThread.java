@@ -51,9 +51,9 @@ public class CasherThread extends Thread {
                 + "seg");
     }
 
-	private void waitBysecond(int segundos) {
+	private void waitBysecond(int seconds) {
 		try {
-			Thread.sleep(segundos * 1000);
+			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException ex) {
 			Thread.currentThread().interrupt();
 		}
