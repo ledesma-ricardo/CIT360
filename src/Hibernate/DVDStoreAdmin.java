@@ -3,11 +3,6 @@
  * and open the template in the editor.
  */
 
-/*
- * DVDStoreAdmin.java
- *
- * Created on Jun 17, 2009, 11:43:48 AM
- */
 package CIT360_Hibernate;
 
 import java.util.List;
@@ -19,7 +14,7 @@ import org.hibernate.Session;
 
 /**
  *
- * @author nb
+ * @author RAledesma
  */
 public class DVDStoreAdmin extends javax.swing.JFrame {
 
