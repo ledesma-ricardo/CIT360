@@ -1,6 +1,4 @@
 package CIT360_Hibernate;
-// Generated Jun 17, 2009 11:42:47 AM by Hibernate Tools 3.2.1.GA
-
 
 import java.util.Date;
 
