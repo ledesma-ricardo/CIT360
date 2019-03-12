@@ -13,7 +13,7 @@ public class TestJUnit {
       String player;
     int age =0;
     String nickname;
-//    boolean nickname= false;
+
 
     public TestJUnit(String player, int age, String nickname) 
     {
