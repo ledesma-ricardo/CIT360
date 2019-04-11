@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2019 4:38:54 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.SalesDetalil" table="sales_detalil" catalog="dealer_java" optimistic-lock="version">
+        <id name="idSale" type="java.lang.Integer">
+            <column name="idSale" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="client" class="model.Client" fetch="select">
+            <column name="IDclient" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vehicle" class="model.Vehicle" fetch="select">
+            <column name="IDvehicle" not-null="true" />
+        </many-to-one>
+        <property name="priceSale" type="double">
+            <column name="price_sale" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="discount" type="double">
+            <column name="discount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

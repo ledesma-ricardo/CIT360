@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2019 4:38:54 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Client" table="client" catalog="dealer_java" optimistic-lock="version">
+        <id name="idclient" type="java.lang.Integer">
+            <column name="IDclient" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+        <property name="surname" type="string">
+            <column name="surname" length="45" not-null="true" />
+        </property>
+        <property name="lname" type="string">
+            <column name="lname" length="45" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="10" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="45" not-null="true" />
+        </property>
+        <property name="age" type="string">
+            <column name="age" length="2" not-null="true" />
+        </property>
+        <set name="salesDetalils" table="sales_detalil" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDclient" not-null="true" />
+            </key>
+            <one-to-many class="model.SalesDetalil" />
+        </set>
+    </class>
+</hibernate-mapping>

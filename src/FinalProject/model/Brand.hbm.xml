@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2019 4:38:54 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Brand" table="brand" catalog="dealer_java" optimistic-lock="version">
+        <id name="idbrand" type="java.lang.Integer">
+            <column name="IDbrand" />
+            <generator class="identity" />
+        </id>
+        <property name="brand" type="string">
+            <column name="brand" length="45" not-null="true" />
+        </property>
+        <property name="state" type="byte">
+            <column name="state" not-null="true" />
+        </property>
+        <set name="vehicles" table="vehicle" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDbrand" not-null="true" />
+            </key>
+            <one-to-many class="model.Vehicle" />
+        </set>
+    </class>
+</hibernate-mapping>
